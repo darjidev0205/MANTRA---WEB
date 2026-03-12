@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 125 75% 24%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 122 39% 49%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 120 20% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 120 30% 95%;
+    --accent-foreground: 125 75% 24%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 10% 90%;
+    --input: 120 10% 90%;
+    --ring: 125 75% 24%;
+
+    --radius: 0.75rem;
+
+    --hero-overlay: linear-gradient(135deg, hsla(125, 75%, 24%, 0.85), hsla(122, 39%, 49%, 0.7));
+    --shadow-card: 0 4px 24px -4px hsla(125, 75%, 24%, 0.08);
+    --shadow-card-hover: 0 12px 40px -8px hsla(125, 75%, 24%, 0.15);
+    --shadow-elevated: 0 20px 60px -12px hsla(0, 0%, 0%, 0.12);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 125 75% 24%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 120 30% 95%;
+    --sidebar-accent-foreground: 125 75% 24%;
+    --sidebar-border: 120 10% 90%;
+    --sidebar-ring: 125 75% 24%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28;
+  }
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border rounded-2xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-all duration-500;
+  }
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-heading font-semibold px-8 py-3.5 rounded-full hover:brightness-110 transition-all duration-300 text-sm tracking-wide;
+  }
+  .btn-outline {
+    @apply border-2 border-primary text-primary font-heading font-semibold px-8 py-3.5 rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-sm tracking-wide;
+  }
+  .section-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground tracking-tight;
+  }
+  .section-subtitle {
+    @apply text-base sm:text-lg text-muted-foreground font-body max-w-2xl leading-relaxed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
